@@ -1,0 +1,21 @@
+import random
+name = input("It is a guess the number game. What is your name? ")
+print(f'Hello {name}. I am thinking about the number between 0 and 20. Try to guess it')
+number = random.randrange(0, 20)
+tries = 0
+while tries < 5:
+    guess = int(input("Input your guess: "))
+    if guess == number:
+        print("You won!")
+    elif guess > number:
+        tries = tries + 1
+        print(f'My number is lower. You have {5 - tries} tries left.')
+    elif guess < number:
+        tries = tries + 1
+        print(f'My number is higher. You have {5 - tries} tries left.')
+    else:
+        tries = tries + 1
+        print(f'Thats not my number. You have {5-tries} tries left.')
+while tries == 5:
+    print(f"You loose. My number was {number}")
+    break
