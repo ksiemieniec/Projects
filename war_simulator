@@ -1,0 +1,29 @@
+import random
+
+turn = 1
+redhp = 100
+bluehp = 100
+atkstrong = 15
+atklow = 5
+
+while redhp > 0 and bluehp > 0:
+        reddmg = random.randrange(atklow, atkstrong)
+        bluedmg = random.randrange(atklow, atkstrong)
+        redhp = redhp - bluedmg
+        bluehp = redhp - reddmg
+
+        if redhp <= 0:
+            redhp = 0
+            print(f"In {turn} Blue hits Red with {bluedmg} DMG. Red is now {redhp} HP. He has lost")
+            print("BLUE WINS")
+            break
+
+        if bluehp <= 0:
+            bluehp = 0
+            print(f"In {turn} Red hits Blue with {reddmg} DMG. Blue is now {bluehp} HP. He has lost")
+            print("RED WINS")
+            break
+
+        print(f"In {turn} Red hits Blue with {reddmg} DMG. Blue is now {bluehp} HP.")
+        print(f"In {turn} Blue hits Red with {bluedmg} DMG. Red is now {redhp} HP.")
+        turn = turn + 1
