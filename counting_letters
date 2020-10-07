@@ -1,3 +1,5 @@
+import pprint
+
 string = input("Input string to count letters in it: ")
 stringlower = str.lower(string)
 letters = list(stringlower)
@@ -7,4 +9,4 @@ for character in letters:
     counting.setdefault(character, 0)
     counting[character] = counting[character] + 1
 
-print(counting)
+pprint.pprint(counting)
