@@ -1,0 +1,10 @@
+string = input("Input string to count letters in it: ")
+stringlower = str.lower(string)
+letters = list(stringlower)
+counting = {}
+
+for character in letters:
+    counting.setdefault(character, 0)
+    counting[character] = counting[character] + 1
+
+print(counting)
